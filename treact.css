@@ -28,7 +28,7 @@ ul {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0px 20px;
+  padding: 0px 32px;
   /* display: flex; */
 }
 
@@ -37,6 +37,36 @@ ul {
 }
 .purple {
   color: rgb(100, 21, 255);
+}
+
+h1 {
+  color: #243e63;
+  font-size: 48px;
+  margin: 16px 0 0;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 16px;
+  color: #6415ff;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+h6 {
+  font-size: 20px;
+  color: #243e63;
+}
+p {
+  color: rgb(124, 139, 161);
+  font-size: 18px;
+  font-weight: 500;
+  tab-size: 4;
+  text-align: left;
 }
 /* nav */
 
@@ -143,16 +173,10 @@ nav {
   padding: 96px 0;
 }
 
-.features__para {
-  font-size: 16px;
-  margin: 16px 0 0;
-  color: #7c8ba1;
-}
-
 .title {
   color: #243e63;
   font-size: 24px;
-  margin: 16px 0 0;
+  /* margin: 16px 0 0; */
   font-weight: 700;
 }
 #services__heading--text {
@@ -191,19 +215,9 @@ nav {
   /* height: 80px; */
 }
 
-.service {
-  display: flex;
-  /* flex-grow: 1; */
-  margin: 0 16px;
-  padding: 32px 8px;
-  gap: 20px;
-  width: calc(100% / 3);
-  /* height: 200px; */
-}
-
 .text__container {
-    padding: 0;
-    margin: 8px 0 0 16px;
+  padding: 0;
+  margin: 8px 0 0 16px;
 }
 
 .title {
@@ -236,6 +250,16 @@ nav {
   /* object-fit: cover; This ensures the image maintains its aspect ratio and fills the circular container */
 }
 
+.service {
+  display: flex;
+  /* flex-grow: 1; */
+  /* margin: 0 16px; */
+  padding: 32px 8px;
+  gap: 20px;
+  width: calc(100% / 3);
+  /* height: 200px; */
+}
+
 /* quality section */
 
 .quality__left {
@@ -257,16 +281,56 @@ nav {
   width: 600px;
 }
 
+.learn__more {
+  background: #6415ff;
+  color: #f7fafc;
+  margin: 32px 0 0;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  width: 150px;
+  border-radius: 20px;
+  border: none;
+}
 /* steps */
 
 .steps-left {
   width: 50%;
 }
 
+.steps__content--left {
+  font-size: 36px;
+  color: #cbd5e0;
+}
+
+.text__align {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.values__fa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background: #9ae6b4;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
 .steps-right {
   width: 50%;
+  padding-left: 40px;
+
   display: flex;
   flex-direction: column;
+}
+
+.steps__wrapper img {
+  width: 100%;
 }
 
 .steps__img--wrapper img {
@@ -274,20 +338,31 @@ nav {
 }
 
 .steps__content {
+  margin-top: 32px;
+
   display: flex;
 }
 
 .steps__content--right {
+  margin-left: 24px;
+
   display: flex;
   flex-direction: column;
 }
 
+.minibox__para {
+  margin-top: 12px;
+  font-size: 14px;
+}
 /* values */
 
 .quality__left {
+  margin-right: 20px;
   width: 50%;
 }
-
+.values__box {
+  display: flex;
+}
 .quality__right {
   width: 50%;
 }
@@ -297,18 +372,89 @@ nav {
 }
 
 /* plans */
-
+.text__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
 .plans {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+}
+hr {
+  border: none; /* Remove the default border */
+  height: 1px; /* Set the height of the horizontal rule */
+  background-color: blue; /* Set the background color to your desired color */
 }
 
 .plan {
-  width: calc(100% / 3);
+  width: calc(90% / 3);
   display: flex;
+  gap: 20px;
+  background: rgb(255, 255, 255);
+  border: rgb(226, 232, 240) solid;
+  border-radius: 8px;
+  padding: 8px 32px;
+  margin: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
   flex-direction: column;
 }
 
+.plan1 {
+  position: relative; /* Needed for the ::before pseudo-element */
+}
+
+.plan1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Adjust the height of the border */
+  background: linear-gradient(
+    115deg,
+    rgb(56, 178, 172) 0%,
+    rgb(129, 230, 217) 100%
+  );
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.plan__heading {
+  margin: 40px 0;
+}
+
+
+.plan__heading::after {
+    margin: 20px;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 330px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(226, 232, 240)
+  }
+.plan__price {
+  color: rgb(26, 32, 44);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.plan__monthly {
+  color: rgb(160, 174, 192);
+  font-weight: 700;
+  text-align: center;
+
+  letter-spacing: 1.6px;
+}
 /* testimonials */
 
 .testimonial__left {
