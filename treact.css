@@ -385,11 +385,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
 }
-hr {
-  border: none; /* Remove the default border */
-  height: 1px; /* Set the height of the horizontal rule */
-  background-color: blue; /* Set the background color to your desired color */
-}
+
 
 .plan {
   width: calc(90% / 3);
@@ -406,7 +402,7 @@ hr {
   flex-direction: column;
 }
 
-.plan1 {
+.plan1, .plan2, .plan3 {
   position: relative; /* Needed for the ::before pseudo-element */
 }
 
@@ -415,7 +411,7 @@ hr {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 101%;
   height: 8px; /* Adjust the height of the border */
   background: linear-gradient(
     115deg,
@@ -426,22 +422,93 @@ hr {
   border-top-right-radius: 10px;
 }
 
+.plan3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 8px; /* Adjust the height of the border */
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
 .plan__heading {
   margin: 40px 0;
 }
 
 
-.plan__heading::after {
-    margin: 20px;
+.plan__heading::after{
+    /* margin: 40px; */
     content: "";
     display: block;
     height: 2px;
     width: 330px;
     position: relative;
-    top: 50%;
+    top: 16px;
     transform: translateY(-50%);
     background-color: rgb(226, 232, 240)
   }
+  .plan2 .plan__heading::after {
+    background-color: rgb(102, 126, 234);
+
+}
+
+  .plan__body {
+      /* margin: 0 auto; */
+      margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+    /* padding: 50px; */
+  }
+
+  .plan__body::after {
+    content: "";
+    height: 2px;
+    width: 300px;
+    margin-top: 50px;
+    transform: translateY(-50%);
+  display: block; /* Change from inline to block */
+    background-color: rgb(226, 232, 240)
+  }
+  .plan2 .plan__body::after  {
+    background-color: rgb(102, 126, 234);
+    /* visibility: hidden; */
+  }
+
+  .plan__title {
+    color: rgb(26, 32, 44);
+    font-size: 20px;
+    font-weight: 700;
+  }
+.button__wrapper {
+    margin-bottom: 20px;
+}
+
+.gradient__btn {
+    font-size: 16px;
+    padding: 20px 80px;
+    border-radius: 40px;
+    color: white;
+    font-weight: 700;
+    border: none;
+}
+
+
+.gradient__btn0 {
+    background-image: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.gradient__btn2 {
+    background-image: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
+
 .plan__price {
   color: rgb(26, 32, 44);
   font-size: 48px;
@@ -455,16 +522,34 @@ hr {
 
   letter-spacing: 1.6px;
 }
+.plan2 {
+    border: none;
+    background-image: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%)
+}
+.plan2 * {
+    color: white !important;
+}
+.gradient__btn1 {
+    color: rgb(100, 21, 255) !important;
+}
+
+
 /* testimonials */
 
 .testimonial__left {
   width: 50%;
+  margin-right: 20px;
 }
 
 .testimonial__img-wrapper img {
   width: 100%;
 }
-
+.testimonial__experience {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+ 
+}
 .testimonial__right {
   padding: 20px;
   display: flex;
@@ -472,22 +557,163 @@ hr {
   gap: 20px;
   width: 50%;
 }
+.pfp__wrapper {
+    width: 80px;
+    height:80px;
+    margin: 20px 20px 20px 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.pfp__wrapper img {
+    width: 80px;
+}
+.testimonial__slideshow {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.two__columnuser {
+    display: flex;
+}
+.two__columnuser--info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* margin-right: 200px; */
+}
+.arrow__direction  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 20px;
+    background-color: rgb(237, 242, 247);
+}
+.arrow__keys {
+    /* padding: 20px; */
+    display: flex;
+    /* justify-content: flex-end; */
+    
+    margin-left: auto;
+    align-items: center;
+    gap: 20px;
+}
+.vertical-line {
+    width: 1px;
+    height: 30px; /* Adjust the height as needed */
+    background-color: rgb(226, 232, 240); /* Change the color as needed */
+    margin: 0 10px; /* Adjust the margin between the arrows and the line */
+  }
 
+
+  /* short section */
+  .short__section--text {
+    color: rgb(247, 250, 252);
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .short__section--container {
+    background-color: rgb(89, 29, 255);
+    padding: 100px 100px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Cut off any content that overflows this container */
+    position: relative;
+    display: flex;
+
+  }
+  .short__section--buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+
+  .alpha__buttons {
+    width: 150px;
+    color: rgb(247, 250, 252);
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: none;
+  }
+
+  .start {
+    background-color: #f56565;
+  }
+
+  .contact{
+    border: 1px solid rgb(247, 250, 252);
+    background-color: rgb(89, 29, 255);
+
+  }
+  .short__section--display {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+}
+
+.short__section--blob {
+    position: absolute;
+    /* right:10; */
+    right:140px;
+    top:-150px;
+    transform: matrix(1, 0, 0, 1, 1, 0);
+    overflow-x: hidden;
+    width: 200px;
+    color: rgb(80, 17, 204);
+    
+}
+
+.short__section--blob-2 {
+    position: absolute;
+    /* right:10; */
+    left:-200px;
+    bottom:-150px;
+    transform: matrix(1, 0, 0, 1, 1, 0);
+    overflow-x: hidden;
+    width: 300px;
+    color: rgb(80, 17, 204);
+    
+}
 /* footer */
 
+.footer__container {
+    color:white;
+    background-color: rgb(89, 29, 255);
+    padding: 80px 0;
+}
 .footer__links {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
+  justify-content: space-between;
+
 }
 
 .footer__list {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  color: rgb(247, 250, 252);
+  width: calc(100% /5);
   align-items: center;
+  gap:20px;
+
+
+
+  /* align-items: flex-start */
+}
+
+.footer__list * {
+    text-align: left;
+    color:rgb(247, 250, 252);
 }
 
 .footer__info {
+    
   display: flex;
   justify-content: space-between;
   align-items: center;
