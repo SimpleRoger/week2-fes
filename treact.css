@@ -123,6 +123,10 @@ nav {
   border: none;
 }
 
+.btn__menu--close {
+  position: absolute;
+  right: 40px;
+}
 
 .menu__backdrop {
   border-radius: 50px;
@@ -159,6 +163,7 @@ nav {
 .landing__page {
   margin-top: 80px;
   display: flex;
+  /* flex-wrap: wrap; */
 }
 
 .welcome__title {
@@ -194,6 +199,7 @@ nav {
   text-align: left;
   width: 100%;
   font-size: 16px;
+  min-width: 400px;
 }
 
 .email__signup input {
@@ -404,6 +410,10 @@ nav {
 }
 /* values */
 
+.values__wrapper {
+  display: flex;
+  flex-direction: row;
+}
 .quality__left {
   margin-right: 20px;
   width: 50%;
@@ -418,6 +428,8 @@ nav {
 .quality__right--img-wrapper img {
   width: 100%;
 }
+
+.
 
 /* plans */
 .text__wrapper {
@@ -598,6 +610,10 @@ nav {
 
 /* testimonials */
 
+
+.testimonial__wrapper {
+  display: flex;
+}
 .testimonial__left {
   width: 50%;
   margin-right: 20px;
@@ -736,6 +752,14 @@ nav {
 }
 /* footer */
 
+.nav__logo--footer {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #f7fafc;
+  font-weight: 900;
+  margin-left: 8px;
+}
 .footer__container {
   color: white;
   background-color: rgb(89, 29, 255);
@@ -746,13 +770,14 @@ nav {
   flex-wrap: wrap;
   margin-bottom: 50px;
   justify-content: space-between;
+  /* width: 100%; */
 }
 
 .footer__list {
   display: flex;
   flex-direction: column;
   color: rgb(247, 250, 252);
-  width: calc(100% / 5);
+  /* width: calc(100% / 5); */
   /* align-items: center; */
   gap: 20px;
 
@@ -804,7 +829,9 @@ nav {
 }
 
 .rights__reserved {
-  color: white;
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .footer__rights--link:hover {
@@ -814,9 +841,19 @@ nav {
   border: none;
 }
 
-/* responsiveness */
+.footer__links::after {
+  margin: 20px;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: relative;
+  top: 20px;
+  transform: translateY(-50%);
+  background-color: rgb(116, 44, 255);
+}
 
-/* Responsiveness */
+/* responsiveness */
 
 @media (max-width: 1024px) {
   .btn__menu {
@@ -835,5 +872,159 @@ nav {
   .menu--open {
     max-height: 100vh;
     overflow-y: hidden;
+  }
+  .landing__page {
+    flex-direction: column;
+    align-items: center;
+    /* min-width: 1000px; */
+  }
+  .left-side {
+    width: 90%;
+    align-items: center;
+  }
+  .welcome__para {
+    text-align: center;
+  }
+
+  .service {
+    width: calc(100% / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+  .welcome__title {
+    text-align: center;
+  }
+  .email__signup {
+    margin-bottom: 80px;
+  }
+  .get__started {
+    top: 80px;
+
+    width: 100%;
+  }
+  .services {
+    align-items: center;
+    justify-content: center;
+  }
+  .service {
+    width: 100%;
+    justify-content: center;
+  }
+  .row--flex {
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .steps-left {
+    margin-bottom: 20px;
+    width: 80%;
+  }
+
+  .steps-right {
+    width: 80%;
+    /* margin-bottom: 40px; */
+    /* justify-content: center;
+    align-content: center; */
+    align-items: center;
+  }
+  .values__box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quality__wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .steps__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .learn__more {
+    margin: 0 auto;
+  }
+  .quality__img {
+    margin: 0 auto;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+
+  .quality__left,
+  .quality__right {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* values */
+  .values__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .values__box {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .text__align {
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .values__mini1,
+  .values__mini2 {
+    text-align: center;
+    margin: 0 auto;
+  }
+  p {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .text__wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .plan {
+    margin: 50px, auto;
+    width: 80%;
+    height: 650px;
+  }
+
+  .plan__body {
+    margin: 0;
+  }
+
+  /* testimonial */
+
+  .testimonial__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__right {
+    width:90%;
+    align-items: center;
+  }
+
+  .short__section--display {
+    flex-direction: column; 
+  }
+
+  .short__section--text {
+    width: 80%;
   }
 }
